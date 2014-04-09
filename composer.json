@@ -1,0 +1,22 @@
+{
+    "name": "dominik/bleed",
+    "description": "bleed - Heartbleed (CVE-2014-0160) tool.",
+    "require": {
+        "hoa/socket": "dev-master",
+        "clue/hexdump": "dev-master"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Dominik Tobschall",
+            "email": "dtobschall@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "bleed\\" : "lib/bleed/"
+        }
+    },
+    "bin": ["bin/bleed"],
+    "minimum-stability": "dev"
+}

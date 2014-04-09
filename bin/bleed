@@ -1,0 +1,51 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * bleed - Heartbleed (CVE-2014-0160) tool
+ *
+ * @copyright Copyright (C) 2014 Dominik Tobschall. All rights reserved.
+ * @author Dominik Tobschall (http://tobschall.de/)
+ */
+
+/*
+ * Find the Composer autoloader.
+ */
+
+$paths = array(
+    __DIR__ . '/../vendor/autoload.php',  // In case the project is cloned directly
+    __DIR__ . '/../../../autoload.php',   // In case the project is a composer dependency.
+);
+
+foreach ($paths as $path) {
+    if (file_exists($path)) {
+        include($path);
+        break;
+    }
+}
+
+if ($argc<2) {
+    $cmd = $argv[0];
+    echo <<<BLEED
+bleed - Heartbleed (CVE-2014-0160) tool
+
+Usage: {$cmd} [host] [port (default 443)]
+
+BLEED;
+    die();
+}
+
+/*
+ * Import namespaces
+ */
+use bleed\bleed;
+
+/*
+ * Instantiate
+ */
+$bleed = new bleed($argv[1], isset($argv[2]) ? $argv[2] : false);
+
+/*
+ * Run
+ */
+$bleed->run();
