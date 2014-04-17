@@ -42,5 +42,7 @@ composer global update 'dominik/bleed'
 
 ## Fineprint
 
+*As your attorney, I advise you* to not use this software to do stuff that's not legal under the laws applicable to wherever you may be located and whatever you are doing with it. If you need an analogy: It may be allowed to run over things in your own backyard with your car, but in most jurisdictions it's probably illegal to run over things in the streets.
+
 * [License](https://github.com/DominikTo/bleed/blob/master/LICENSE)
 * [Disclaimer](http://knowyourmeme.com/memes/i-have-no-idea-what-im-doing)
